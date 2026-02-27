@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     const result = await db.collection("reflections").insertOne(newReflection);
 
     return NextResponse.json({
-      _id: result.insertedId,
+      id: result.insertedId,
       ...newReflection,
     });
   } catch (error) {
